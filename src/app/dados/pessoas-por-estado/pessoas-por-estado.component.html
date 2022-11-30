@@ -1,0 +1,5 @@
+<p-card header="Quantidade de Pessoas por Estado">
+  <div *ngFor="let dado of dadosCandidatosShareService.dadosCandidatos.qtdPessoasPorEstado| keyvalue">
+    <span>{{dado.key}} = {{dado.value}}</span>
+  </div>
+</p-card>
