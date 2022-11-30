@@ -1,45 +1,75 @@
 <br>
 <h1 align="center">
-Calculadora Alticci Sequence (Frontend) ⚛️
+Sistema de Doação Sanguínea (Front-end) 💉🩸
 </h1>
 <br>
 
 ## 💬 Sobre o repositório
 
-A Calculadora Alticci Sequence calcula um valor da sequência Alticci com base em um índice passado, na qual é definida da seguinte forma:
+O Sistema de Doação Sanguínea recebe uma massa de dados contendo informações de candidatos a doadores de sangue, processa todas as informações e devolve os seguintes dados:
 
-n=0 => a(0) = 0
+• Quantos candidatos temos nessa lista em cada estado do Brasil? 
 
-n=1 => a(1) = 1
+• IMC médio em cada faixa de idade de dez em dez anos: 0 a 10; 11 a 20; 21 a 30, etc.
 
-n=2 => a(2) = 1
+• Qual o percentual de obesos entre os homens e entre as mulheres?
 
-n>2 => a(n) = a(n-3) + a(n-2)
+• Qual a média de idade para cada tipo sanguíneo? 
 
-O serviço principal tira partido de cálculos passados para acelerar cálculos futuros por meio do caching (utilizando memoização). Além do serviço principal, há também um serviço sem a utilização da memoização, para demonstrar a diferença de performance.
+• A quantidade de possíveis doadores para cada tipo sanguíneo receptor
 
 ## ⚠ Pré-requisitos para execução do projeto
 
-* Angular (v14)
-* Angular CLI
-* Node.js
+* Java 11 ou versões superiores
+* Maven
+* NodeJS
+* NPM
+* MySQL
 
 ## 📌 Como utilizar?
 
-Para utilizar a Calculadora Alticci Sequence em produção, basta acessá-lo diretamente no seu navegador. [Clique aqui!](https://wienerdev.github.io/sds-angular/)
+Para utilizar o Sistema de Doação Sanguínea, é necessário ter uma instância de conexão do banco de dados ativa (no caso MySQL), que por padrão fica na porta 3306, caso sua porta esteja diferente, especifique no application.properties em:
 
-* OBS: Para executar o projeto com sucesso, deve-se rodar o backend localmente. [Clique aqui para navegar ao repositório.](https://github.com/wienerdev/alticci-sequence)
+```
+spring.datasource.url=jdbc:mysql://localhost:<PORTA_BD>/testewk-doacao-sangue?createDatabaseIfNotExist=true
+spring.datasource.username=<USUARIO_BD>
+spring.datasource.password=<SENHA_BD>
+```
 
-Digite o seguinte comando no diretório raiz para baixar as dependências necessárias:
+Com o banco de dados devidamente configurado, rode o [back-end da aplicação](https://github.com/wienerdev/sds) através do seguinte comando:
+
+*Disponível em http://localhost:8080/
+
+```
+mvn spring-boot:run 
+```
+
+Após rodar o back-end com sucesso, abra o [front-end da aplicação](https://github.com/wienerdev/sds-angular) e instale os pacotes necessários, através dos seguinte comando:
 
 ```
 npm install
 ```
 
-Para executar o projeto, digite:
+Com os pacotes instalados, suba a aplicação com o seguinte comando:
+
+*Disponível em http://localhost:4200/
 
 ```
 ng serve
 ```
 
-Após o build, acesse o projeto pelo link: http://localhost:4200/
+Com a aplicação rodando, acesse o localhost (porta 4200), e navegue pelo sistema!
+
+## 🧠 Links importantes
+
+* [Documentação oficial do Angular](https://angular.io/)
+* [Site oficial do NodeJS](https://nodejs.org/en/)
+* [Site oficial do NPM](https://www.npmjs.com/)
+* [Referência para o padrão arquitetural REST](https://restfulapi.net/)
+* [Palheta de atalhos de comandos do IntelliJ](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+* [Site oficial do Spring](https://spring.io/)
+* [Site oficial do Spring Initialzr para setup do projeto](https://start.spring.io/)
+* [SDKMan! para gerenciamento e instalação do Java e Maven](https://sdkman.io/)
+* [Site oficial do MySQL](https://www.mysql.com/)
+
+---
